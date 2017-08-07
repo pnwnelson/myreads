@@ -12,7 +12,7 @@ class Book extends Component {
 				<div className="book">
 	        <div className="book-top">
 	          <img className="book-cover" style={{ width: 128, height: 193 }} src={book.imageLinks.smallThumbnail}></img>
-	          <BookShelfChanger onChangeShelf={this.handleShelfChange} />
+	          <BookShelfChanger book={book} updateBookShelf={this.props.updateBookShelf} />
 	        </div>
 	        <div className="book-title">{book.title}</div>
 	        <div className="book-authors">{book.authors}</div>
