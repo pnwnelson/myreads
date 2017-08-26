@@ -10,7 +10,7 @@ class ListBooks extends Component {
 
 	render () {
 
-		const { books, shelf, selectedShelf, updateBookShelf, getBookShelf } = this.props
+		const { books, shelf, selectedShelf, onUpdateBookShelf, getBookShelf } = this.props
 
 		return (
 
@@ -19,21 +19,21 @@ class ListBooks extends Component {
       		name="Currently Reading" 
       		shelf={selectedShelf}
       		books={books.filter(book => book.shelf === 'currentlyReading' )} 
-      		updateBookShelf={updateBookShelf} 
+      		onUpdateBookShelf={onUpdateBookShelf} 
       		getBookShelf={getBookShelf}
       	/>
       	<Shelf 
       		name="Want To Read" 
       		shelf={selectedShelf}
       		books={books.filter(book => book.shelf === 'wantToRead' )} 
-      		updateBookShelf={updateBookShelf} 
+      		onUpdateBookShelf={onUpdateBookShelf}
       		getBookShelf={getBookShelf}
       	/>
       	<Shelf 
       		name="Read" 
       		shelf={selectedShelf}
       		books={books.filter(book => book.shelf === 'read' )} 
-      		updateBookShelf={updateBookShelf} 
+      		onUpdateBookShelf={onUpdateBookShelf} 
       		getBookShelf={getBookShelf}
       	/>
       </div>

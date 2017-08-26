@@ -5,7 +5,7 @@ class BookShelfChanger extends Component {
 
   static propTypes = {
     getBookShelf: PropTypes.func.isRequired,
-    getBookShelf: PropTypes.func.isRequired
+    // onUpdateBookShelf: PropTypes.func.isRequired
   }
 
   render () {

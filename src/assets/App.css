@@ -51,6 +51,10 @@ body, .app {
   padding: 0 10px 20px;
 }
 
+.reads {
+  font-weight: 300
+}
+
 @media (min-width: 600px) {
   .bookshelf {
     padding: 1px 20px 40px;
