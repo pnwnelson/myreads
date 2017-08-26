@@ -2,9 +2,9 @@
 
 ## Description
 
-	[Live Demo](https://pnwnelsonmyreads.surge.sh)
-	- This app is a project built during Udacity's React Nanodegree course. It an app that keeps track of books via 'shelves' for a user.
-	- The app is a front end that uses Udacity's API server and book library.
+[Live Demo](https://pnwnelsonmyreads.surge.sh)
+- This app is a project built during Udacity's React Nanodegree course. It an app that keeps track of books via 'shelves' for a user.
+- The app is a front end that uses Udacity's API back end which provides a book library.
 
 ## Components Structure
 
@@ -19,22 +19,21 @@ APP.js
 └─ ListBooks.js
 		|
 		└─ Shelf.js
+			|
+			└─ Book.js
 				|
-				└─ Book.js
-							|
-							└─ BookShelfChanger.js
-
+				└─ BookShelfChanger.js
 ```
 
 ## Required Libraries and Dependencies
-	- create-react-app
-	- react-router-dom
-	- throttle-debounce
-	- escape-string-regexp
-	- prop-types
+- create-react-app
+- react-router-dom
+- throttle-debounce
+- escape-string-regexp
+- prop-types
 
 ## How to run project
-	1. Clone or download project to it's own project folder
-	2. Run `npm install --save` from that folder.
-	3. Run `npm run start`
-	4. Use the search terms listed in SEARCH_TERMS.md when searching for a book
+1. Clone or download project to it's own project folder
+2. Run `npm install --save` from that folder.
+3. Run `npm run start`
+4. Use the search terms listed in SEARCH_TERMS.md when searching for a book
