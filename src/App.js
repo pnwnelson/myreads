@@ -118,6 +118,9 @@ class BooksApp extends React.Component {
                 Add a book
                 </Link>
               </div>
+              <div className='section-boxes'>
+                <div className='app-author'>Built by <a href='http://resume.pnwnelson.com'>Kelly Nelson</a> using <a href='https://facebook.github.io/react/'>ReactJS</a>.</div>
+              </div>
             </div>
           )}/>
       </div>
