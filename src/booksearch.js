@@ -8,7 +8,10 @@ class BookSearch extends Component {
 
   static propTypes = {
     books: PropTypes.array.isRequired,
-    onSearchBooks: PropTypes.func.isRequired
+    onUpdateBookShelf: PropTypes.func.isRequired,
+    onSearchBooks: PropTypes.func.isRequired,
+    shelf: PropTypes.string.isRequired,
+    getBookShelf: PropTypes.func.isRequired
   }
 
   state = {
@@ -22,14 +25,15 @@ class BookSearch extends Component {
 
 	render () {
 
-    const { query, books, updateBookShelf } = this.props
+    const { shelf, books, onUpdateBookShelf, getBookShelf } = this.props
+    const { query } = this.state
 
     let showingBooks
     if (query) {
       const match = new RegExp(escapeRegExp(query), 'i')
-      showingBooks = books.filter((book) => match.test(book.title || book.authors))
+      showingBooks = books.filter(book => match.test(book.title) || match.test(book.authors))
     } else {
-      showingBooks = books
+      showingBooks = []
     }
 
 		return (
@@ -52,7 +56,9 @@ class BookSearch extends Component {
             <Book 
               key={book.id} 
               book={book} 
-              updateBookShelf={updateBookShelf} 
+              shelf={shelf}
+              onUpdateBookShelf={onUpdateBookShelf} 
+              getBookShelf={getBookShelf}
             />
             )}
           </ol>

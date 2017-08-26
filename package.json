@@ -14,6 +14,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "deploy": "npm run build && surge -p build -d pnwnelsonmyreads.surge.sh",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }
