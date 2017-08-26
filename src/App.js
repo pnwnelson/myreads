@@ -24,31 +24,14 @@ class BooksApp extends React.Component {
     }
   }
 
-// Get the data from the API first...
+  // Get the data from the API first...
   componentDidMount() {
     BooksAPI.getAll().then((books) => {
       this.setState({ books })
     })
   }
 
- // handler to move book to a different shelf
-  // updateBookShelf = (book,shelf) => {
-  //   BooksAPI.update(book,shelf)
-  //     .then(
-  //       this.setState(state => (
-  //         {books: state.books.map(b => {
-  //           if (b.title === book.title){
-  //             b.shelf = shelf;
-  //             return b
-  //           } else {
-  //             return b
-  //           }
-  //         }),
-  //         showSearchPage: false,
-  //        }))
-  //     )
-  // };
-
+  // Handler to change shelves
   updateBookShelf = (book, shelf) => {
     this.setState({selectedShelf: shelf})
     if (book.shelf !== shelf) {
@@ -61,7 +44,7 @@ class BooksApp extends React.Component {
     } else return book
   }
 
-  // handler to search for a book that is not on a shelf
+  // Handler to search for a book that is not on a shelf
   searchBooks = throttle(100, (query) => {
     this.setState({ query })
 
@@ -74,6 +57,7 @@ class BooksApp extends React.Component {
       }
     })
 
+  // Handler to show the correct shelf on menu
   getBookShelf = (book) => {
     const existingBook = this.state.books.find(b => b.id === book.id)
     if (existingBook) return existingBook.shelf
