@@ -1,12 +1,12 @@
 ## MyReads App
 
-## Desription
+## Description
 
-	### [Live Demo](https://pnwnelsonmyreads.surge.sh)
+	[Live Demo](https://pnwnelsonmyreads.surge.sh)
 	- This app is a project built during Udacity's React Nanodegree course. It an app that keeps track of books via 'shelves' for a user.
 	- The app is a front end that uses Udacity's API server and book library.
 
-	#### Components Structure
+## Components Structure
 
 ```
 APP.js
