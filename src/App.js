@@ -1,6 +1,6 @@
 // Import Tools
 import React from 'react'
-import { Link, Route } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 import { throttle } from 'throttle-debounce'
 // Import Assets
 import * as BooksAPI from './utils/BooksAPI'
@@ -80,31 +80,14 @@ class BooksApp extends React.Component {
             />
           )}/>        
           <Route exact path='/' render={() => (
-            <div className="list-books">
-              <div className="list-books-title">
-                <h1>my<span className='reads'>reads</span></h1>
-                <h2>a virtual book shelf</h2>
-              </div>
-              <div className="list-books-content">
-                <ListBooks 
-                  books={this.state.books} 
-                  selectedShelf={this.state.selectedShelf}
-                  getBookShelf={this.getBookShelf}
-                  on
-                  onUpdateBookShelf={this.updateBookShelf}
-                />
-              </div>
-              <div className="open-search">
-                <Link 
-                  to='/search' 
-                  onClick={() => this.setState({ showSearchPage: true })}
-                >
-                Add a book
-                </Link>
-              </div>
-              <div className='section-boxes'>
-                <div className='app-author'>Built by <a href='http://resume.pnwnelson.com'>Kelly Nelson</a> using <a href='https://facebook.github.io/react/'>ReactJS</a>.</div>
-              </div>
+            <div>
+              <ListBooks 
+                books={this.state.books} 
+                selectedShelf={this.state.selectedShelf}
+                getBookShelf={this.getBookShelf}
+                on
+                onUpdateBookShelf={this.updateBookShelf}
+              />
             </div>
           )}/>
       </div>
