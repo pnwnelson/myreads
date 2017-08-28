@@ -27,8 +27,10 @@ class BooksApp extends React.Component {
   // Get the data from the API first...
   componentDidMount() {
     BooksAPI.getAll().then((books) => {
+      console.log(books)
       this.setState({ books })
     })
+
   }
 
   // Handler to change shelves
@@ -50,6 +52,10 @@ class BooksApp extends React.Component {
 
     if (query.trim() !== '') {
       BooksAPI.search(query).then((res) => {
+        // Need to check what shelf book is in here?
+        // if (book.shelf === '') {
+        // this.setState(book.shelf: 'None')
+        // } 
         this.setState((state, props) => ({searchResults: res }))
       }).catch((e) => {
         console.log('error', e)

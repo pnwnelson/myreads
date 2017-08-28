@@ -1,11 +1,19 @@
 import React, { Component } from 'react'
 import BookShelfChanger from './bookshelfchanger'
+import PropTypes from 'prop-types'
 
 class Book extends Component {
 
+	static propTypes = {
+		book: PropTypes.object.isRequired,
+		onUpdateBookShelf: PropTypes.func.isRequired,
+		shelf: PropTypes.string.isRequired,
+		getBookShelf: PropTypes.func.isRequired
+	}
+
 	render () {
 
-		const { book, onUpdateBookShelf, getBookShelf } = this.props
+		const { book, onUpdateBookShelf, getBookShelf, selectedShelf} = this.props
 
 		return (
 			<li key={book.id}>
@@ -16,6 +24,7 @@ class Book extends Component {
 	          	book={book} 
 	          	onUpdateBookShelf={onUpdateBookShelf} 
 	          	getBookShelf={getBookShelf}
+	          	shelf={selectedShelf}
 	          />
 	        </div>
 	        <div className="book-title">{book.title}</div>
