@@ -52,10 +52,11 @@ class BooksApp extends React.Component {
 
     if (query.trim() !== '') {
       BooksAPI.search(query).then((res) => {
-        // Need to check what shelf book is in here?
-        // if (book.shelf === '') {
-        // this.setState(book.shelf: 'None')
-        // } 
+        // Set shelf to none
+        const searchResults = res.map(searchResult => {
+          searchResult.shelf = 'none';
+          return searchResult
+        })
         this.setState((state, props) => ({searchResults: res }))
       }).catch((e) => {
         console.log('error', e)
